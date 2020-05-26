@@ -5,6 +5,6 @@ module.exports = (req, res) => {
 #EXT-X-ALLOW-CACHE:YES
 #EXT-X-TARGETDURATION:7
 #EXTINF:6.600000,
-aP7vLxG_460svvp9.webm_00000.ts
+https://schoeller.now.sh/output/aP7vLxG_460svvp9.webm_00000.ts
 #EXT-X-ENDLIST`);
 }
