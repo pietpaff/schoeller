@@ -30,6 +30,7 @@
       var enc = new TextEncoder("utf-8");
       let playlist = URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
 
+      document.querySelector('video').type = "application/x-mpegURL";
       document.querySelector('video').src = playlist;
       //
       // var video = document.getElementById('video');
