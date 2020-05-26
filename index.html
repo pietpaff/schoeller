@@ -12,14 +12,15 @@
   <body>
     <video-js id="my-video" class="vjs-default-skin" controls width="640" height="264" data-setup="{}"></video-js>
     <script>
-      let manifest = ['#EXTM3U',
-      '#EXT-X-VERSION:3',
-      '#EXT-X-MEDIA-SEQUENCE:0',
-      '#EXT-X-ALLOW-CACHE:YES',
-      '#EXT-X-TARGETDURATION:7',
-      '#EXTINF:6.600000,',
-      'output/aP7vLxG_460svvp9.webm_00000.ts',
-      '#EXT-X-ENDLIST'].join('\n');
+      let manifest =
+`#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-TARGETDURATION:7
+#EXTINF:6.600000,
+output/aP7vLxG_460svvp9.webm_00000.ts
+#EXT-X-ENDLIST`;
 
       let parser = new m3u8Parser.Parser();
 
