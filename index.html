@@ -8,12 +8,23 @@
   <body>
     <!-- Or if you want a more recent canary version -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-    <video id="video"></video>
+    <video controls id="video"></video>
     <script>
+      let strings = ['#EXTM3U',
+      '#EXT-X-VERSION:3',
+      '#EXT-X-MEDIA-SEQUENCE:0',
+      '#EXT-X-ALLOW-CACHE:YES',
+      '#EXT-X-TARGETDURATION:7',
+      '#EXTINF:6.600000,',
+      'output/aP7vLxG_460svvp9.webm_00000.ts',
+      '#EXT-X-ENDLIST'];
+
+      var enc = new TextEncoder("utf-8");
+
       var video = document.getElementById('video');
       if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource('output/aP7vLxG_460svvp9.webm.m3u8');
+        hls.loadSource(URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
           video.play();
