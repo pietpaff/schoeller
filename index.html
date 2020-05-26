@@ -11,26 +11,28 @@
   </head>
   <body>
     <video-js id="my-video" class="vjs-default-skin" controls width="640" height="264" data-setup="{}"></video-js>
-    <!-- <script>
-      let manifest = ['#EXTM3U',
-      '#EXT-X-VERSION:3',
-      '#EXT-X-MEDIA-SEQUENCE:0',
-      '#EXT-X-ALLOW-CACHE:YES',
-      '#EXT-X-TARGETDURATION:7',
-      '#EXTINF:6.600000,',
-      'output/aP7vLxG_460svvp9.webm_00000.ts',
-      '#EXT-X-ENDLIST'].join('\n');
-
-      let parser = new m3u8Parser.Parser();
-
-      parser.push(manifest);
-      parser.end();
-
-      let player = videojs('my-video');
+    <script>
+      // let manifest = ['#EXTM3U',
+      // '#EXT-X-VERSION:3',
+      // '#EXT-X-MEDIA-SEQUENCE:0',
+      // '#EXT-X-ALLOW-CACHE:YES',
+      // '#EXT-X-TARGETDURATION:7',
+      // '#EXTINF:6.600000,',
+      // 'output/aP7vLxG_460svvp9.webm_00000.ts',
+      // '#EXT-X-ENDLIST'].join('\n');
+      //
+      // let parser = new m3u8Parser.Parser();
+      //
+      // parser.push(manifest);
+      // parser.end();
+      //
+      // let player = videojs('my-video');
       player.src({
-        src: `data:application/vnd.videojs.vhs+json,${JSON.stringify(parser.manifest)}`,
-        type: 'application/vnd.videojs.vhs+json'
+        // src: `data:application/vnd.videojs.vhs+json,${JSON.stringify(parser.manifest)}`,
+        src: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+        // type: 'application/vnd.videojs.vhs+json'
+        type: 'application/x-mpegURL'
       });
-    </script> -->
+    </script>
   </body>
 </html>
