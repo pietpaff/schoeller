@@ -5,6 +5,7 @@
     <title> Streaming test </title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/m3u8-parser@4.2.0/dist/m3u8-parser.min.js"></script>
   </head>
   <body>
     <!-- Or if you want a more recent canary version -->
@@ -18,7 +19,7 @@
     data-setup="{}"
     ></video>
     <script>
-      let strings = ['#EXTM3U',
+      let manifest = ['#EXTM3U',
       '#EXT-X-VERSION:3',
       '#EXT-X-MEDIA-SEQUENCE:0',
       '#EXT-X-ALLOW-CACHE:YES',
@@ -27,11 +28,18 @@
       'aP7vLxG_460svvp9.webm_00000.ts',
       '#EXT-X-ENDLIST'];
 
-      var enc = new TextEncoder("utf-8");
-      let playlist = URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
+      let parser = new m3u8Parser.Parser();
 
-      document.querySelector('video').type = "application/x-mpegURL";
-      document.querySelector('video').src = playlist;
+      parser.push(manifest);
+      parser.end();
+
+      let parsedManifest = parser.manifest;
+      // 
+      // var enc = new TextEncoder("utf-8");
+      // let playlist = URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
+      //
+      // document.querySelector('video').type = "application/x-mpegURL";
+      // document.querySelector('video').src = playlist;
       //
       // var video = document.getElementById('video');
       // if (Hls.isSupported()) {
