@@ -7,11 +7,11 @@ module.exports = (req, res) => {
     #EXT-X-KEY:METHOD=AES-128,URI="https://schoeller.now.sh/api/auth/?key='}Y$q@&UR!@DJb0$"
     #EXT-X-TARGETDURATION:26
     #EXTINF:23.481800,
-    00000.ts
+    output/00000.ts
     #EXTINF:23.064711,
-    00001.ts
+    output/00001.ts
     #EXTINF:20.854167,
-    00002.ts
+    output/00002.ts
     #EXTINF:20.854167,
     00003.ts
     #EXTINF:20.854167,
