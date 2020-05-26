@@ -4,6 +4,22 @@
     <meta charset="utf-8">
     <title> Streaming test </title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+      body {
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #222;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      #video {
+        max-width: 100vw;
+        max-height: 100vh;
+      }
+    </style>
   </head>
   <body>
     <video id="video" controls></video>
@@ -14,13 +30,13 @@
 
       if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource(`https://schoeller.now.sh/api/auth/?key=${key}`);
+        hls.loadSource(`https://schoeller.now.sh/api/playlist/?key=${key}`);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
           video.play();
         });
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = `https://schoeller.now.sh/api/auth/?key=${key}`;
+        video.src = `https://schoeller.now.sh/api/playlist/?key=${key}`;
         video.addEventListener('loadedmetadata', function() {
           video.play();
         });

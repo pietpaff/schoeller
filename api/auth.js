@@ -1,6 +1,6 @@
 module.exports = (req, res) => {
-  if (req.query.key == '!pUpsbAcke99LP') {
-    res.end(`#EXTM3U\n#EXT-X-VERSION:3\n#EXT-X-MEDIA-SEQUENCE:0\n#EXT-X-ALLOW-CACHE:YES\n#EXT-X-TARGETDURATION:7\n#EXTINF:6.600000,\nhttps://schoeller.now.sh/output/aP7vLxG_460svvp9.webm_00000.ts\n#EXT-X-ENDLIST`);
+  if (req.query.key == `'}Y$q@&UR!@DJb0$`) {
+    res.end([0x8e, 0x8b, 0xf5, 0x04, 0x50, 0xd0, 0x89, 0x0a, 0x64, 0xb4, 0x45, 0xe5, 0x36, 0x18, 0x6e, 0xaa].map(e => String.fromCharCode(e)).join(""));
   } else {
     res.status(403).end('Incorrect password.');
   }
