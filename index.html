@@ -32,14 +32,15 @@
 
       parser.push(manifest);
       parser.end();
-
-      let parsedManifest = parser.manifest;
       //
       // var enc = new TextEncoder("utf-8");
       // let playlist = URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
       //
-      // document.querySelector('video').type = "application/x-mpegURL";
-      // document.querySelector('video').src = playlist;
+      let player = videojs('my-video');
+      player.src({
+        src: `data:application/vnd.videojs.vhs+json,${JSON.stringify(parser.manifest)}`,
+        type: 'application/vnd.videojs.vhs+json'
+      });
       //
       // var video = document.getElementById('video');
       // if (Hls.isSupported()) {
