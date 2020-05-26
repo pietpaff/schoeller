@@ -20,11 +20,12 @@
       '#EXT-X-ENDLIST'];
 
       var enc = new TextEncoder("utf-8");
+      let playlist = URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
 
       var video = document.getElementById('video');
       if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource(URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))])));
+        hls.loadSource(playlist);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
           video.play();
