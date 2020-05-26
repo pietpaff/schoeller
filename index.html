@@ -25,8 +25,8 @@
       '#EXT-X-ALLOW-CACHE:YES',
       '#EXT-X-TARGETDURATION:7',
       '#EXTINF:6.600000,',
-      'aP7vLxG_460svvp9.webm_00000.ts',
-      '#EXT-X-ENDLIST'];
+      'output/aP7vLxG_460svvp9.webm_00000.ts',
+      '#EXT-X-ENDLIST'].join('\n');
 
       let parser = new m3u8Parser.Parser();
 
@@ -34,7 +34,7 @@
       parser.end();
 
       let parsedManifest = parser.manifest;
-      // 
+      //
       // var enc = new TextEncoder("utf-8");
       // let playlist = URL.createObjectURL(new Blob([enc.encode(strings.join('\n'))]));
       //
