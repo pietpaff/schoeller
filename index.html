@@ -10,15 +10,17 @@
     <script>
       var video = document.getElementById('video');
 
+      let key = prompt("Keno wüsste das Password ...");
+
       if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource('https://schoeller.now.sh/api/auth');
+        hls.loadSource(`https://schoeller.now.sh/api/auth/?key=${key}`);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
           video.play();
         });
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = 'https://schoeller.now.sh/api/auth';
+        video.src = `https://schoeller.now.sh/api/auth/?key=${key}`;
         video.addEventListener('loadedmetadata', function() {
           video.play();
         });
