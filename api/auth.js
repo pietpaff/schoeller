@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-  if (req.query.key == `'}Y$q@&UR!@DJb0$`) {
+  if (req.query.key == `qFPRHRUW3VuQKxmb`) {
     res.end([0x8e, 0x8b, 0xf5, 0x04, 0x50, 0xd0, 0x89, 0x0a, 0x64, 0xb4, 0x45, 0xe5, 0x36, 0x18, 0x6e, 0xaa].map(e => String.fromCharCode(e)).join(""));
   } else {
     res.status(403).end('Incorrect password.');
