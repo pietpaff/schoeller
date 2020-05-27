@@ -2,7 +2,7 @@
 #EXT-X-VERSION:3
 #EXT-X-MEDIA-SEQUENCE:0
 #EXT-X-ALLOW-CACHE:YES
-#EXT-X-KEY:METHOD=AES-128,URI="https://schoeller.now.sh/api/auth/?key='}Y$q@&UR!@DJb0$"
+#EXT-X-KEY:METHOD=AES-128,URI="https://schoeller.now.sh/api/auth/?key=qFPRHRUW3VuQKxmb"
 #EXT-X-TARGETDURATION:26
 #EXTINF:23.481800,
 00000.ts
